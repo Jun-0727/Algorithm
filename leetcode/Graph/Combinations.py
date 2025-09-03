@@ -22,4 +22,21 @@ def combine_implement(n, k):
 def combine(n: int, k: int) -> list:
     return list(itertools.combinations(range(1, n+1), k))
 
-print(combine(4,2))
+# print(combine(4,2))
+
+
+def comb(n: int, k: int):
+    result = []
+
+    def dfs(start, path):
+        if len(path) == k:
+            result.append(path[:])
+        
+        for i in range(start, n+1):
+            dfs(i+1, path+[i])
+
+    dfs(1,[])
+    
+    return result
+
+print(comb(4,2))
