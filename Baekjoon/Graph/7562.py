@@ -2,29 +2,6 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
-"""
-def dfs(x, y, count):
-    if result and count > min(result):
-        return
-    
-    if (x < 0 or x >= l) or (y < 0 or y >= l):
-        return
-    
-    if visited[x][y] > 0 and visited[x][y] < count:
-        return
-    
-    if x == goal_x and y == goal_y:
-        result.append(count)
-        return
-
-    visited[x][y] = count
-    
-    for dx, dy in [[1,2], [1,-2], [-1,2], [-1,-2], [2,1], [2,-1], [-2,1], [-2,-1]]:
-        nx, ny = x + dx, y + dy
-        
-        dfs(nx, ny, count+1)
-"""
-
 answers = []
 test_case = int(input())
 for _ in range(test_case):
@@ -57,3 +34,30 @@ for _ in range(test_case):
 
 for answer in answers:
     print(answer)
+
+
+
+# --------------------
+# 재귀 연습용 코드
+# --------------------
+result = []
+visited = [[0] * (l) for _ in range(l)]     # 방문 기록 초기화
+
+def dfs(x, y, count):
+    if x == goal_x and y == goal_y:
+        result.append(count)
+        return
+
+    if (x < 0 or x >= l) or (y < 0 or y >= l):
+        return
+    
+    if visited[x][y] > 0 and visited[x][y] < count:
+        return
+    
+    
+    visited[x][y] = count
+    
+    for dx, dy in [[1,2], [1,-2], [-1,2], [-1,-2], [2,1], [2,-1], [-2,1], [-2,-1]]:
+        nx, ny = x + dx, y + dy
+        
+        dfs(nx, ny, count+1)
