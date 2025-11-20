@@ -1,4 +1,4 @@
-## 백만 장자 프로젝트 ##
+## [SWEA / 1859번] 백만 장자 프로젝트 ##
 
 def get_max_profit(prices: list) -> int:
     max_price = max(prices[0:])                 # 구간별 최대 가격

@@ -1,4 +1,4 @@
-## 최대상금 ##
+## [SWEA / 1244번] 최대상금 ##
 
 def swap_cards(prize: int) -> list:
     results = set()                                         # 카드 위치가 바뀐 모든 경우의 수(중복제거)

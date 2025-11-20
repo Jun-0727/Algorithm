@@ -1,4 +1,4 @@
-## Flatten ##
+## [SWEA / 1208번] Flatten ##
 
 def flatten(box: list, count: int) -> int:
     

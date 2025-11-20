@@ -1,4 +1,4 @@
-## 보급로 ##
+## [SWEA / 1249번] 보급로 ##
 
 from heapq import heappush, heappop
 MAXSIZE = 100000
